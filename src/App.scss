@@ -1,1 +1,40 @@
 @import "bootstrap/scss/bootstrap";
+@import "./Styles/ColorVariable";
+
+// import other scss files
+@import "./components/NavBar/NabBar";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif", serif;
+}
+
+// common scss
+a {
+  color: #000 !important;
+}
+
+button {
+  outline: none !important;
+  border: none !important;
+  background-color: $MainBtnColor !important;
+
+  &:hover {
+    background-color: $MainBtnColor !important;
+  }
+
+  &:active {
+    background-color: $MainBtnColor !important;
+  }
+
+  &:focus {
+    background-color: $MainBtnColor !important;
+    outline: none;
+    box-shadow: none !important;
+  }
+}
