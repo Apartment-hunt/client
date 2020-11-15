@@ -1,13 +1,11 @@
-import { Container, Button } from "react-bootstrap";
 import "./App.scss";
+import Home from "./components/Home/Home";
 
 function App() {
   return (
-    <div>
-      <Container>
-        <Button>Hello</Button>
-      </Container>
-    </div>
+    <>
+      <Home />
+    </>
   );
 }
 
