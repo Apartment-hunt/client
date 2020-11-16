@@ -1,3 +1,4 @@
+import React from 'react';
 import Footer from "../Footer/Footer";
 import HeroSection from "../HeroSection/HeroSection";
 import NavBar from "../NavBar/NavBar";
@@ -5,9 +6,9 @@ import RentRoom from "../RentRoom/RentRoom";
 import Service from "../Service/Service";
 import "./Home.scss";
 
-export default function Home() {
+const Home = () => {
   return (
-    <>
+    <div>
       <NavBar />
       <HeroSection />
       <div className="secondaryBanner">
@@ -15,6 +16,8 @@ export default function Home() {
         <Service />
       </div>
       <Footer />
-    </>
+    </div>
   );
-}
+};
+
+export default Home;
