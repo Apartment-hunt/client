@@ -5,7 +5,7 @@ export default function Heading(props) {
   return (
     <div className="text-center heading">
       <p>{sectionName}</p>
-      <h1>{message}</h1>
+      <h3>{message}</h3>
     </div>
   );
 }

@@ -1,0 +1,49 @@
+@import "../../Styles/ColorVariable";
+
+.apartmentBanner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.705) 100%, rgba(0, 0, 0, 0.705) 0), url(https://i.ibb.co/VCKYVJd/Rectangle-13.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  color: white;
+}
+
+.apartmentDetails {
+  color: $PrimaryTextColor;
+  img {
+    width: 100%;
+  }
+
+  h2 {
+    color: $SecondaryTextColor;
+  }
+
+  .price {
+    color: $PrimaryColor;
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+
+  form {
+    flex-direction: column;
+    background-color: #f4f4f4;
+    padding: 30px 10px 30px 10px;
+  }
+
+  input,
+  textarea {
+    border: 1px solid #dddddd !important;
+    padding-left: 10px;
+    width: 300px !important;
+    border-radius: 5px;
+  }
+
+  input {
+    height: 40px;
+  }
+
+  textarea {
+    height: 100px;
+  }
+}

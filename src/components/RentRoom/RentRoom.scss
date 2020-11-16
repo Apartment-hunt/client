@@ -3,8 +3,20 @@
 .card {
   border-radius: 0;
   margin-bottom: 30px;
+  color: $SecondaryTextColor;
 
   img {
     border-radius: 0;
+  }
+
+  .rentTitle {
+    color: black;
+    font-weight: bold;
+  }
+
+  .rentPrice {
+    font-size: 1.6em;
+    color: $SecondaryTextColor;
+    font-weight: 700;
   }
 }
