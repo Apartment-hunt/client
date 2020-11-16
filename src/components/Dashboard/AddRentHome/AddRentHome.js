@@ -16,10 +16,11 @@ export default function AddServices() {
     console.log(data)
   };
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getBookings());
-  }, [dispatch])
-  const bookings = useSelector((state) => state.BookingState.bookingReducers);
+  }, [])
+  const bookings = useSelector((state) => state.BookingState.bookings);
   console.log(bookings);
 
   return (
