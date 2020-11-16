@@ -1,9 +1,14 @@
 import React from 'react';
+import HeroSection from "../HeroSection/HeroSection";
+import NavBar from "../NavBar/NavBar";
+import RentRoom from "../RentRoom/RentRoom";
 
 const Home = () => {
   return (
     <div>
-      <h1>Home page..</h1>
+      <NavBar />
+      <HeroSection />
+      <RentRoom />
     </div>
   );
 };

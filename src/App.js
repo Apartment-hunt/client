@@ -9,8 +9,8 @@ import Home from './components/Home/Home';
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import PrivateRoute from './PrivateRoute/PrivateRoute';
-
 export const UserContext = createContext()
+
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -30,7 +30,6 @@ function App() {
         </Switch>
       </Router>
     </UserContext.Provider>
-
   );
 }
 
