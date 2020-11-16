@@ -7,6 +7,12 @@ import AddRentHome from "./components/Dashboard/AddRentHome/AddRentHome";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 export const UserContext = createContext();
 
 function App() {

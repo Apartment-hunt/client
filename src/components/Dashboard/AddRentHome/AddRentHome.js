@@ -4,7 +4,10 @@ import { Button, Form, FormGroup, Row } from "react-bootstrap";
 import DashboardSideBar from "../DashboardSideBar/DashboardSideBar";
 import DashboardStatus from "../DashboardStatus/DashboardStatus";
 import "./AddRentHome.scss";
+import { useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import { getBookings } from "../../../redux/actions/bookingActions/bookingActions";
 
 export default function AddServices() {
   document.body.style.backgroundColor = "#e5e5e5";
@@ -12,6 +15,10 @@ export default function AddServices() {
   const onSubmit = data => {
     console.log(data)
   };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBookings())
+  }, [])
 
   return (
     <div>
