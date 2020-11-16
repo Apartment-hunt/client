@@ -1,4 +1,4 @@
-import *as api from '../api/booking/bookingApi.js';
+import *as api from '../../api/booking/bookingApi.js';
 
 export const getBookings = () => async(dispatch) => {
     try{
