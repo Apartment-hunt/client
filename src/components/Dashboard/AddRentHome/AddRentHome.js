@@ -45,7 +45,7 @@ export default function AddServices() {
                     </FormGroup>
                     <FormGroup className="fileUpload">
                       <Form.Label>Thumbnail</Form.Label>
-                      <input type="file" id="upload" hidden />
+                      <input type="file" id="upload" hidden multiple />
                       <label htmlFor="upload" className="uploadBtn">
                         <FontAwesomeIcon icon={faCloudUploadAlt} /> Upload image
                       </label>
