@@ -7,7 +7,6 @@ import {
 import "./App.scss";
 
 import Home from "./components/Home/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SingleRentRoom from "./components/SingleRentRoom/SingleRentRoom";
 import BookingList from "./components/Dashboard/BookingList/BookingList";
 import AddRentHome from "./components/Dashboard/AddRentHome/AddRentHome";
