@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Footer from "../Footer/Footer";
 import HeroSection from "../HeroSection/HeroSection";
 import NavBar from "../NavBar/NavBar";
