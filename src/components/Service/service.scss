@@ -1,0 +1,16 @@
+@import "../../Styles/ColorVariable";
+
+.serviceItems {
+  img {
+    width: 90px;
+  }
+
+  h3 {
+    color: $SecondaryTextColor;
+  }
+
+  p {
+    font-size: 0.9em;
+    color: $PrimaryTextColor;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../Styles/ColorVariable";
+
+.footer {
+  background-color: $PrimaryColor;
+  color: white;
+  height: 300px;
+
+  a {
+    color: white !important;
+    text-decoration: none;
+  }
+
+  svg {
+    font-size: 1.8em;
+    margin-right: 10px;
+  }
+
+  ul li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+}
