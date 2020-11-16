@@ -30,9 +30,9 @@ export default function DashboardSideBar() {
                   </Link>
                 </li>
                 <li className="my-4 col-sm-12 col-5 p-1 sliderMenu">
-                  <Link to="/myRent">
+                  <Link to="/myBooking">
                     <FontAwesomeIcon icon={faHome} className="mr-3" />
-                    My Rent
+                    My Booking
                   </Link>
                 </li>
               </>
