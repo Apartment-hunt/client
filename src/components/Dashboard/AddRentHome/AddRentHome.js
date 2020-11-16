@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Row } from "react-bootstrap";
 import DashboardSideBar from "../DashboardSideBar/DashboardSideBar";
 import DashboardStatus from "../DashboardStatus/DashboardStatus";
 import "./AddRentHome.scss";
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { getBookings } from "../../../redux/actions/bookingActions/bookingActions";
@@ -12,13 +12,13 @@ import { getBookings } from "../../../redux/actions/bookingActions/bookingAction
 export default function AddServices() {
   document.body.style.backgroundColor = "#e5e5e5";
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
-    console.log(data)
+  const onSubmit = (data) => {
+    console.log(data);
   };
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBookings());
-  }, [dispatch])
+  }, [dispatch]);
   const bookings = useSelector((state) => state.BookingState.bookingReducers);
   console.log(bookings);
 
