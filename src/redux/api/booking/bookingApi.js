@@ -1,11 +1,8 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/booking/';
-
-
 export const fetchBookings = () => {
-    const bookings =  axios.get(url);
+    const bookings =  axios.get('/booking/');
     return bookings;
 }
 
-export const createBooking = (newBooking) => axios.post(url,newBooking);
+export const createBooking = (newBooking) => axios.post('/booking/',newBooking);

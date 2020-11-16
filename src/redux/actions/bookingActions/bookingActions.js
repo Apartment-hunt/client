@@ -8,3 +8,11 @@ export const getBookings = () => async(dispatch) => {
         console.log(error.message);
     }
 }
+export const postBooking = (newBooking) => async(dispatch) => {
+    try{
+        const {data} = await api.createBooking(newBooking);
+        dispatch({type : 'CREATE',payload:data});
+    }catch(error){
+        console.log(error.message);
+    }
+}
