@@ -1,13 +1,16 @@
+import React from 'react';
 import HeroSection from "../HeroSection/HeroSection";
 import NavBar from "../NavBar/NavBar";
 import RentRoom from "../RentRoom/RentRoom";
 
-export default function Home() {
+const Home = () => {
   return (
-    <>
+    <div>
       <NavBar />
       <HeroSection />
       <RentRoom />
-    </>
+    </div>
   );
-}
+};
+
+export default Home;
