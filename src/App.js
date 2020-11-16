@@ -1,12 +1,14 @@
 import React, { createContext, useState } from "react";
 import "./App.scss";
 import Home from "./components/Home/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SingleRentRoom from "./components/SingleRentRoom/SingleRentRoom";
 import BookingList from "./components/Dashboard/BookingList/BookingList";
 import AddRentHome from "./components/Dashboard/AddRentHome/AddRentHome";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import MyBooking from "./components/Dashboard/MyBooking/MyBooking";
 export const UserContext = createContext();
 
 function App() {
@@ -20,14 +22,12 @@ function App() {
           <PrivateRoute exact path="/addRentHome">
             <AddRentHome />
           </PrivateRoute>
+          <Route exact path="/myBooking" component={MyBooking} />
           <PrivateRoute exact path="/bookingList">
             <BookingList />
           </PrivateRoute>
           <PrivateRoute exact path="/singleRentRoom">
             <SingleRentRoom />
-          </PrivateRoute>
-          <PrivateRoute exact path="/">
-            <Home />
           </PrivateRoute>
           <Route exact path="/register">
             <Register></Register>

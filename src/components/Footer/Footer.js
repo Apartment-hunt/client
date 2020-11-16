@@ -18,19 +18,19 @@ export default function Footer() {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="#">About</a>
+                <a href="/about">About</a>
               </li>
               <li>
-                <a href="#">Site Map</a>
+                <a href="/map">Site Map</a>
               </li>
               <li>
-                <a href="#">Support Center</a>
+                <a href="/center">Support Center</a>
               </li>
               <li>
-                <a href="#">Terms Conditions</a>
+                <a href="/termsConditions">Terms Conditions</a>
               </li>
               <li>
-                <a href="#">Submit Listing</a>
+                <a href="/submitLists">Submit Listing</a>
               </li>
             </ul>
           </div>
@@ -38,19 +38,19 @@ export default function Footer() {
             <h5>Quick Links</h5>
             <ul>
               <li>
-                <a href="#">Rentals</a>
+                <a href="/rentals">Rentals</a>
               </li>
               <li>
-                <a href="#">Sales</a>
+                <a href="/sales">Sales</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href="/contact">Contact</a>
               </li>
               <li>
-                <a href="#">Terms Conditions</a>
+                <a href="/termsConditions">Terms Conditions</a>
               </li>
               <li>
-                <a href="#">Our blog</a>
+                <a href="/blogs">Our blog</a>
               </li>
             </ul>
           </div>
@@ -58,16 +58,16 @@ export default function Footer() {
             <h5>About us</h5>
             <p className="pt-3">We are the top real estate agency in Sydney, with agents available to answer any question 24/7.</p>
             <div className="d-flex socialMedia">
-              <a href="#">
+              <a href="https://www.facebook.com/">
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/">
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
-              <a href="#">
+              <a href="https://www.youtube.com/">
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
             </div>
