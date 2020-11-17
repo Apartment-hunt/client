@@ -19,19 +19,16 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
-          <Route exact path="/addRentHome">
+          <PrivateRoute exact path="/addRentHome">
             <AddRentHome />
-          </Route>
-          {/* <PrivateRoute exact path="/addRentHome">
-            <AddRentHome />
-          </PrivateRoute> */}
+          </PrivateRoute>
           <Route exact path="/myBooking" component={MyBooking} />
           <PrivateRoute exact path="/bookingList">
             <BookingList />
           </PrivateRoute>
-          <Route exact path="/singleRentRoom/:title">
+          <PrivateRoute exact path="/singleRentRoom/:title">
             <SingleRentRoom />
-          </Route>
+          </PrivateRoute>
           <Route exact path="/register">
             <Register></Register>
           </Route>
