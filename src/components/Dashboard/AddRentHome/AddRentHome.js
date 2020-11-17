@@ -4,24 +4,38 @@ import { Button, Form, FormGroup, Row } from "react-bootstrap";
 import DashboardSideBar from "../DashboardSideBar/DashboardSideBar";
 import DashboardStatus from "../DashboardStatus/DashboardStatus";
 import "./AddRentHome.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
-import { getBookings } from "../../../redux/actions/bookingActions/bookingActions";
+import { useEffect, useState } from "react";
+import { postHouse } from "../../../redux/actions/houseAction/houseActions";
 
 export default function AddServices() {
   document.body.style.backgroundColor = "#e5e5e5";
+  const [newHouse, setNewHouse] = useState({});
+  const [files, setfiles] = useState();
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    const { title, location, bathroom, price, bedroom, file } = data;
+    console.log(file);
+    const formData = new FormData()
+    formData.append('file', file);
+    formData.append('title', title);
+    formData.append('location', location);
+    formData.append('bathroom', bathroom);
+    formData.append('price', price);
+    formData.append('bedroom', bedroom);
+    setNewHouse(formData);
+
   };
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getBookings());
-  }, [])
-  const bookings = useSelector((state) => state.BookingState.bookings);
-
+    if (newHouse) {
+      dispatch(postHouse(newHouse));
+    }
+    // eslint-disable-next-line
+  }, [newHouse])
   return (
     <div>
       <Row>
@@ -32,7 +46,7 @@ export default function AddServices() {
           <Row>
             <DashboardStatus pageName={{ name: "Add Rent Home" }} />
             <div className="col-md-12 my-5 dashboardContainer">
-              <Form className="addRentHomeForm my-5" onSubmit={handleSubmit(onSubmit)}>
+              <Form className="addRentHomeForm my-5" onSubmit={handleSubmit(onSubmit)} enctype="multipart/form-data">
                 <Row>
                   <div className="col-md-6">
                     <FormGroup>
@@ -64,8 +78,8 @@ export default function AddServices() {
                     </FormGroup>
                     <FormGroup className="fileUpload">
                       <Form.Label>Thumbnail</Form.Label>
-                      <input type="file" id="upload" name="images" ref={register({ required: true })} multiple hidden />
-                      {errors.images && <span>This field is required</span>}
+                      <input type="file" id="upload" name="file" ref={register({ required: true })} hidden />
+                      {errors.file && <span>This field is required</span>}
                       <label htmlFor="upload" className="uploadBtn">
                         <FontAwesomeIcon icon={faCloudUploadAlt} /> Upload image
                       </label>
