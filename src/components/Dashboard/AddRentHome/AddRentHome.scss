@@ -1,0 +1,35 @@
+@import "../../../Styles/ColorVariable";
+
+.dashboardContainer {
+  background-color: #e5e5e5;
+}
+
+.addRentHomeForm {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  margin-right: 40px;
+}
+
+.fileUpload {
+  display: flex;
+  flex-direction: column;
+
+  .uploadBtn {
+    background-color: #deffed;
+    width: 180px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #009444;
+    padding: 20px;
+    border-color: #009444;
+    cursor: pointer;
+    border-radius: 5px;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+}

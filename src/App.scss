@@ -1,1 +1,84 @@
 @import "bootstrap/scss/bootstrap";
+@import "./Styles/ColorVariable";
+
+// import other scss files
+@import "./components/NavBar/NabBar";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif", serif;
+  overflow-x: hidden;
+}
+
+// common scss
+ul li {
+  list-style: none;
+}
+
+a {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+button {
+  outline: none !important;
+  border: none !important;
+  background-color: $MainBtnColor !important;
+
+  &:hover {
+    background-color: $MainBtnColor !important;
+  }
+
+  &:active {
+    background-color: $MainBtnColor !important;
+  }
+
+  &:focus {
+    background-color: $MainBtnColor !important;
+    outline: none;
+    box-shadow: none !important;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .mobile {
+    display: block !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .mobile {
+    display: block !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+}
