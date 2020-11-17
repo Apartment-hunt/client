@@ -36,16 +36,16 @@ export default function SingleRentRoom() {
                 <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
                 <Row className=" mt-2 align-items-center justify-content-between">
                   <div className="col-md-3 my-2">
-                    <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
+                    <img src={`data:image/png;base64,${singleRent.images[0].img}`} alt={`${singleRent.title}`} />
                   </div>
                   <div className="col-md-3 my-2">
-                    <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
+                    <img src={`data:image/png;base64,${singleRent.images[1].img}`} alt={`${singleRent.title}`} />
                   </div>
                   <div className="col-md-3 my-2">
-                    <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
+                    <img src={`data:image/png;base64,${singleRent.images[2].img}`} alt={`${singleRent.title}`} />
                   </div>
                   <div className="col-md-3 my-2">
-                    <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
+                    <img src={`data:image/png;base64,${singleRent.images[3].img}`} alt={`${singleRent.title}`} />
                   </div>
                   <SingleApartmentDetails />
                 </Row>
