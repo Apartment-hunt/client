@@ -19,7 +19,7 @@ export default function NavBar() {
             <Nav.Link href="#concerns">Concerns</Nav.Link>
             <Nav.Link href="#event">Event</Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
-            <Link to="/login">
+            <Link to="/myBooking">
               <Button className="px-4">Login</Button>
             </Link>
           </Nav>

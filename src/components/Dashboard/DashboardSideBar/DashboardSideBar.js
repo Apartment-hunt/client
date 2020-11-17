@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHdd, faHome, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Row } from "react-bootstrap";
+import logo from "../../../images/logos/Logo.png";
 import "./DashboardSidebar.scss";
 
 export default function DashboardSideBar() {
@@ -10,8 +11,8 @@ export default function DashboardSideBar() {
       <div className="col-md-12 pl-5 mt-3 sliderContainer">
         <Row>
           <div className=" col-md-12 ml-2 mt-4 ">
-            <Link to="/">
-              <img style={{ width: "120px" }} src="https://i.ibb.co/t445Mcy/logo.png" alt="LOGO" />
+            <Link to="/" className="logo">
+              <img src={logo} alt="LOGO" />
             </Link>
           </div>
           <div className="col-md-12 sliderMenuContainer my-5">
