@@ -11,21 +11,30 @@ import { postHouse } from "../../../redux/actions/houseAction/houseActions";
 
 export default function AddServices() {
   document.body.style.backgroundColor = "#e5e5e5";
-  const [newHouse, setNewHouse] = useState({});
-  const [files, setfiles] = useState();
+  const [newHouse, setNewHouse] = useState();
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    const { title, location, bathroom, price, bedroom, file } = data;
-    console.log(file);
-    const formData = new FormData()
-    formData.append('file', file);
-    formData.append('title', title);
-    formData.append('location', location);
-    formData.append('bathroom', bathroom);
-    formData.append('price', price);
-    formData.append('bedroom', bedroom);
-    setNewHouse(formData);
-
+    const { title, location, bathroom, price, bedroom, file, roomDetails, propertyDetails, priceDetails } = data;
+    console.log(data);
+    const formData = new FormData();
+    if (file) {
+      if (file.length === 5) {
+        for (let i = 0; i < 5; i++) {
+          formData.append(`img${[i]}`, file[i]);
+        }
+        formData.append('title', title);
+        formData.append('location', location);
+        formData.append('bathroom', bathroom);
+        formData.append('price', price);
+        formData.append('bedroom', bedroom);
+        formData.append('roomDetails', roomDetails);
+        formData.append('propertyDetails', propertyDetails);
+        formData.append('priceDetails', priceDetails);
+        setNewHouse(formData);
+      } else {
+        alert("press select only 5 images");
+      }
+    }
   };
 
   const dispatch = useDispatch();
@@ -50,7 +59,7 @@ export default function AddServices() {
                 <Row>
                   <div className="col-md-6">
                     <FormGroup>
-                      <Form.Label>Service Title</Form.Label>
+                      <Form.Label>Title</Form.Label>
                       <Form.Control required type="text" className="title" ref={register({ required: true })} name="title" placeholder="Enter title" />
                       {errors.title && <span>This field is required</span>}
                     </FormGroup>
@@ -64,6 +73,17 @@ export default function AddServices() {
                       <Form.Control required type="number" className="form-control bathroom" ref={register({ required: true })} name="bathroom" placeholder="Enter Bathroom" />
                       {errors.bathroom && <span>This field is required</span>}
                     </FormGroup>
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                      <Form.Label>Room Details</Form.Label>
+                      <Form.Control ref={register({ required: true })} name="roomDetails" as="textarea" rows={5} />
+                      {errors.roomDetails && <span>This field is required</span>}
+                    </Form.Group>
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                      <Form.Label>Price Details</Form.Label>
+                      <Form.Control ref={register({ required: true })} name="priceDetails" as="textarea" rows={3} />
+                      {errors.priceDetails && <span>This field is required</span>}
+                    </Form.Group>
+
                   </div>
                   <div className="col-md-6">
                     <FormGroup>
@@ -76,9 +96,15 @@ export default function AddServices() {
                       <Form.Control required type="number" className="form-control bedroom" ref={register({ required: true })} name="bedroom" placeholder="Enter Bedroom" />
                       {errors.bedroom && <span>This field is required</span>}
                     </FormGroup>
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                      <Form.Label>Property Details</Form.Label>
+                      <Form.Control ref={register({ required: true })} name="propertyDetails" as="textarea" rows={3} />
+                      {errors.propertyDetails && <span>This field is required</span>}
+                    </Form.Group>
+
                     <FormGroup className="fileUpload">
                       <Form.Label>Thumbnail</Form.Label>
-                      <input type="file" id="upload" name="file" ref={register({ required: true })} hidden />
+                      <input type="file" id="upload" name="file" ref={register({ required: true })} multiple hidden />
                       {errors.file && <span>This field is required</span>}
                       <label htmlFor="upload" className="uploadBtn">
                         <FontAwesomeIcon icon={faCloudUploadAlt} /> Upload image
