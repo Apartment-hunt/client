@@ -2,8 +2,9 @@ import *as api from '../../api/house/houseApi.js';
 
 export const getHouses = () => async(dispatch) => {
     try{
-        const {data} = await api.fetchHouses();
-        dispatch({type : 'FETCH_ALL',payload:data});
+        const response = await api.fetchHouses();
+        // console.log(response.data);
+        dispatch({type : 'FETCH_ALL',payload:response.data});
     }catch(error){
         console.log(error.message);
     }

@@ -1,10 +1,25 @@
+import { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import BookingForm from "../BookingForm/BookingForm";
 import NavBar from "../NavBar/NavBar";
 import SingleApartmentDetails from "../SingleApartmentDetails/SingleApartmentDetails";
+import axios from 'axios';
 import "./SingleRentRoom.scss";
+import { useParams } from "react-router-dom";
 
 export default function SingleRentRoom() {
+  const [singleRent, setSingleRent] = useState();
+  const { title } = useParams();
+  useEffect(() => {
+    axios.get('/house/')
+      .then(res => {
+        const datas = res.data;
+        const srent = datas.find(data => data.title === title)
+        console.log(srent);
+        setSingleRent(srent)
+      });
+  }, [])
+  // console.log(singleRent);
   return (
     <div className="singleRentApartment">
       <NavBar />
@@ -15,24 +30,27 @@ export default function SingleRentRoom() {
       </div>
       <Container className="my-4 apartmentDetails">
         <Row>
-          <div className="col-sm-12 col-md-8">
-            <img src="https://i.ibb.co/MM4dccT/Rectangle-406.png" alt="apartment" />
-            <Row className=" mt-2 align-items-center justify-content-between">
-              <div className="col-md-3 my-2">
-                <img src="https://i.ibb.co/R6FzjCc/Rectangle-408.png" alt="apartment" />
+          {
+            !singleRent ? <p>Loading ...</p> :
+              <div className="col-sm-12 col-md-8">
+                <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
+                <Row className=" mt-2 align-items-center justify-content-between">
+                  <div className="col-md-3 my-2">
+                    <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
+                  </div>
+                  <div className="col-md-3 my-2">
+                    <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
+                  </div>
+                  <div className="col-md-3 my-2">
+                    <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
+                  </div>
+                  <div className="col-md-3 my-2">
+                    <img src={`data:image/png;base64,${singleRent.titileImg.img}`} alt={`${singleRent.title}`} />
+                  </div>
+                  <SingleApartmentDetails />
+                </Row>
               </div>
-              <div className="col-md-3 my-2">
-                <img src="https://i.ibb.co/QDYBgB5/Rectangle-407.png" alt="apartment" />
-              </div>
-              <div className="col-md-3 my-2">
-                <img src="https://i.ibb.co/VDdRNzz/Rectangle-409.png" alt="apartment" />
-              </div>
-              <div className="col-md-3 my-2">
-                <img src="https://i.ibb.co/P5fx6wd/Rectangle-410.png" alt="apartment" />
-              </div>
-              <SingleApartmentDetails />
-            </Row>
-          </div>
+          }
           <BookingForm />
         </Row>
       </Container>

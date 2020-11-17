@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-export const fetchHouses = () => axios.get('/house/');
+export const fetchHouses = () => {
+  return axios.get('/house/')
+};
 
 export const createHouses = (newHouse) => axios.post('/house/',newHouse, {
     headers: {
