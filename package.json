@@ -48,6 +48,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://quiet-spire-34698.herokuapp.com"
+  }
 }

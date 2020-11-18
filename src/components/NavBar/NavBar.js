@@ -17,7 +17,9 @@ export default function NavBar() {
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#service">Service</Nav.Link>
             <Nav.Link href="#concerns">Concerns</Nav.Link>
-            <Nav.Link href="#event">Event</Nav.Link>
+            <Nav.Link as={Link} to="/addRentHome">
+              Dashboard
+            </Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
             <Link to="/myBooking">
               <Button className="px-4">Login</Button>
