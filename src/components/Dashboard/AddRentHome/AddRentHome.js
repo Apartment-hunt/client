@@ -22,14 +22,14 @@ export default function AddServices() {
         for (let i = 0; i < 5; i++) {
           formData.append(`img${[i]}`, file[i]);
         }
-        formData.append('title', title);
-        formData.append('location', location);
-        formData.append('bathroom', bathroom);
-        formData.append('price', price);
-        formData.append('bedroom', bedroom);
-        formData.append('roomDetails', roomDetails);
-        formData.append('propertyDetails', propertyDetails);
-        formData.append('priceDetails', priceDetails);
+        formData.append("title", title);
+        formData.append("location", location);
+        formData.append("bathroom", bathroom);
+        formData.append("price", price);
+        formData.append("bedroom", bedroom);
+        formData.append("roomDetails", roomDetails);
+        formData.append("propertyDetails", propertyDetails);
+        formData.append("priceDetails", priceDetails);
         setNewHouse(formData);
       } else {
         alert("press select only 5 images");
@@ -44,7 +44,7 @@ export default function AddServices() {
       dispatch(postHouse(newHouse));
     }
     // eslint-disable-next-line
-  }, [newHouse])
+  }, [newHouse]);
   return (
     <div>
       <Row>
@@ -55,7 +55,7 @@ export default function AddServices() {
           <Row>
             <DashboardStatus pageName={{ name: "Add Rent Home" }} />
             <div className="col-md-12 my-5 dashboardContainer">
-              <Form className="addRentHomeForm my-5" onSubmit={handleSubmit(onSubmit)} enctype="multipart/form-data">
+              <Form className="addRentHomeForm my-5" onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
                 <Row>
                   <div className="col-md-6">
                     <FormGroup>
@@ -75,7 +75,7 @@ export default function AddServices() {
                     </FormGroup>
                     <Form.Group controlId="exampleForm.ControlTextarea1">
                       <Form.Label>Room Details</Form.Label>
-                      <Form.Control ref={register({ required: true })} name="roomDetails" as="textarea" rows={5} />
+                      <Form.Control ref={register({ required: true })} name="roomDetails" as="textarea" rows={3} />
                       {errors.roomDetails && <span>This field is required</span>}
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -83,7 +83,6 @@ export default function AddServices() {
                       <Form.Control ref={register({ required: true })} name="priceDetails" as="textarea" rows={3} />
                       {errors.priceDetails && <span>This field is required</span>}
                     </Form.Group>
-
                   </div>
                   <div className="col-md-6">
                     <FormGroup>

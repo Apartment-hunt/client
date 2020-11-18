@@ -1,12 +1,21 @@
+import { useEffect } from "react";
 import { Form, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { getBookings } from "../../../redux/actions/bookingActions/bookingActions";
 import DashboardSideBar from "../DashboardSideBar/DashboardSideBar";
 import DashboardStatus from "../DashboardStatus/DashboardStatus";
 import MobileAllServerList from "../MobileAllServerList/MobileAllServerList";
-// import "./MakeAdmin.css";
 
 export default function BookingList() {
   document.body.style.backgroundColor = "#e5e5e5";
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getBookings());
+    //eslint-disable-next-line
+  }, []);
+  const bookings = useSelector((state) => state.BookingState.bookings);
+  console.log(bookings);
   return (
     <>
       <div>
@@ -39,35 +48,48 @@ export default function BookingList() {
                   </div>
                 </Row>
                 <Row className="p-2 my-2 text-center" style={{ fontSize: "0.89em", width: "98%" }}>
-                  <div className="col-md-2">
-                    <p>name</p>
-                  </div>
-                  <div className="col-md-3">
-                    <p>email</p>
-                  </div>
-                  <div className="col-md-2">
-                    <p>Phone</p>
-                  </div>
-                  <div className="col-md-3">
-                    <p>message</p>
-                  </div>
-                  <div className="col-md-2">
-                    <Form>
-                      <Form.Group controlId="exampleForm.ControlSelect1">
-                        <select
-                          id="exampleForm.ControlSelect1"
-                          className="form-control form-control-sm"
-                          style={{ color: "#FF4545", backgroundColor: "transparent", border: "none", boxShadow: "none" }}
-                          defaultValue="Pending"
-                        >
-                          <option value="Pending" style={{ backgroundColor: "#fff", color: "#000" }}>
-                            Pending
-                          </option>
-                          <option style={{ backgroundColor: "#fff", color: "#000" }}>Done</option>
-                        </select>
-                      </Form.Group>
-                    </Form>
-                  </div>
+                  {!bookings ? (
+                    <p>Loading..</p>
+                  ) : (
+                    <>
+                      {bookings.map((booking) => (
+                        <>
+                          <div className="col-md-2">
+                            <p>{booking.name}</p>
+                          </div>
+                          <div className="col-md-3">
+                            <p>{booking.email}</p>
+                          </div>
+                          <div className="col-md-2">
+                            <p>{booking.phone}</p>
+                          </div>
+                          <div className="col-md-3">
+                            <p>{booking.message}</p>
+                          </div>
+                          <div className="col-md-2">
+                            <Form>
+                              <Form.Group controlId="exampleForm.ControlSelect1">
+                                <select
+                                  id="exampleForm.ControlSelect1"
+                                  className="form-control form-control-sm"
+                                  style={{ color: "#FF4545", backgroundColor: "transparent", border: "none", boxShadow: "none" }}
+                                >
+                                  <option style={{ backgroundColor: "#fff", color: "#000" }}>{booking.status}</option>
+                                  <option value="Pending" style={{ backgroundColor: "#fff", color: "#000" }}>
+                                    Pending
+                                  </option>
+                                  <option value="Pending" style={{ backgroundColor: "#fff", color: "#000" }}>
+                                    On going
+                                  </option>
+                                  <option style={{ backgroundColor: "#fff", color: "#000" }}>Done</option>
+                                </select>
+                              </Form.Group>
+                            </Form>
+                          </div>
+                        </>
+                      ))}
+                    </>
+                  )}
                 </Row>
               </div>
             </Row>
