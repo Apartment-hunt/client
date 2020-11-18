@@ -44,22 +44,23 @@ export default function MyBooking() {
                 </div>
               </Row>
               <Row className="p-2 my-2 justify-content-between align-items-center text-center" style={{ fontSize: "0.89em", width: "98%" }}>
-                {
-                  !userBookings ? <p>Loadging....</p> :
-                    userBookings.map(userBooking => {
-                      <>
-                        <div className="col-md-2">
-                          <p>{userBooking.name}</p>
-                        </div>
-                        <div className="col-md-3">
-                          <p>{userBooking.price}</p>
-                        </div>
-                        <div className="col-md-2">
-                          <Button>View Details</Button>
-                        </div>
-                      </>
-                    })
-                }
+                {!userBookings ? (
+                  <p>Loading..</p>
+                ) : (
+                  userBookings.map((userBooking) => (
+                    <>
+                      <div className="col-md-4">
+                        <p>{userBooking.name}</p>
+                      </div>
+                      <div className="col-md-4">
+                        <p>{userBooking.phone}</p>
+                      </div>
+                      <div className="col-md-4">
+                        <Button>View Details</Button>
+                      </div>
+                    </>
+                  ))
+                )}
               </Row>
             </div>
           </Row>
