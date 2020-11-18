@@ -22,7 +22,9 @@ function App() {
           <PrivateRoute exact path="/addRentHome">
             <AddRentHome />
           </PrivateRoute>
-          <Route exact path="/myBooking" component={MyBooking} />
+          <PrivateRoute exact path="/myBooking">
+            <MyBooking/>
+          </PrivateRoute>
           <PrivateRoute exact path="/bookingList">
             <BookingList />
           </PrivateRoute>
